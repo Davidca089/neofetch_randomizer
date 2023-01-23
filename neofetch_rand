@@ -1,0 +1,24 @@
+#!/bin/bash
+
+search_dir="/home/suamae/.config/nfrandomizer/templates/"
+tmp_dir="/home/suamae/.config/nfrandomizer/tmp/"
+src_dir="/home/suamae/.config/nfrandomizer/src/"
+file=$(find ${search_dir} -type f | shuf -n 1)
+tmp_file="${tmp_dir}tmp.txt"
+
+# cp to temp
+
+cp $file $tmp_file
+
+
+# apply colorization to tmp
+
+python3 "${src_dir}colorize_neofetch.py" "$tmp_file"
+
+# display tmp
+
+neofetch --ascii_colors 5 8 2 4 5 4 --source $tmp_file
+
+#remove past file
+
+rm $tmp_file
