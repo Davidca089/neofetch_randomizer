@@ -1,8 +1,8 @@
 #!/bin/bash
 
-search_dir="/home/suamae/.config/nfrandomizer/templates/"
-tmp_dir="/home/suamae/.config/nfrandomizer/tmp/"
-src_dir="/home/suamae/.config/nfrandomizer/src/"
+search_dir="/home/$USER/.config/nfrandomizer/templates/"
+tmp_dir="/home/$USER/.config/nfrandomizer/tmp/"
+src_dir="/home/$USER/.config/nfrandomizer/src/"
 file=$(find ${search_dir} -type f | shuf -n 1)
 tmp_file="${tmp_dir}tmp.txt"
 

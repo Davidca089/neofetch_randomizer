@@ -24,7 +24,7 @@ for i, index in enumerate(insert_indices):
     # Update the indices of the remaining insertions to account for the added characters
     insert_indices = [x+len(strings_to_insert[i]) if x > index else x for x in insert_indices]
 
-text = "${c1}" + text
+text = "${c" + str(random.randint(1,6)) +"}" + text
 
 with open(file_path, "w") as f:
     f.write(text)
